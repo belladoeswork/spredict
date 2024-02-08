@@ -177,6 +177,9 @@ input[type="text"] {
   content: '';
 }
 
+#ticker-input {
+  color: black;
+}
 
 /* stop ugly scroll bar on some browsers */
 .output-panel p::-webkit-scrollbar {

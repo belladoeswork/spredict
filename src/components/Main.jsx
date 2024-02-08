@@ -38,10 +38,10 @@ export default function Main() {
   //     }
   //   });
 
-  function renderTickers() {
+  function renderTickers(tickers) {
     const tickersDiv = document.querySelector(".ticker-choice-display");
     tickersDiv.innerHTML = "";
-    tickersArr.forEach((ticker) => {
+    tickers.forEach((ticker) => {
       const newTickerSpan = document.createElement("span");
       newTickerSpan.textContent = ticker;
       newTickerSpan.classList.add("ticker");
@@ -53,10 +53,21 @@ export default function Main() {
     e.preventDefault();
     setHasAttemptedSubmit(true);
     if (tickerInput.length > 2) {
-      setTickersArr([...tickersArr, tickerInput.toUpperCase()]);
-      setTickerInput("");
-      setErrorMessage("");
-      renderTickers();
+        setTickersArr((prevTickersArr) => {
+          
+            const newTicker = tickerInput.toUpperCase();
+            if (prevTickersArr.includes(newTicker)) {
+                setErrorMessage("This ticker has already been added.");
+                setTickerInput("");
+                return prevTickersArr;
+            } else {
+                const newTickersArr = [...prevTickersArr, newTicker];
+                setTickerInput("");
+                setErrorMessage("");
+                renderTickers(newTickersArr);
+                return newTickersArr;
+            }
+      });
     } else {
       setErrorMessage(
         "You must add at least one ticker. A ticker is a 3 letter or more code for a stock. E.g TSLA for Tesla."
