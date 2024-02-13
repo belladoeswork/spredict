@@ -2,6 +2,7 @@ import Image from "next/image";
 import NavBar from "@/components/NavBar.jsx";
 import Footer from "@/components/Footer.jsx";
 import Main from "@/components/Main.jsx";
+import ChatComp from "@/chat/ChatComp.jsx";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <NavBar />
       <Main />
       <Footer />
+      <ChatComp />
       {/* <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

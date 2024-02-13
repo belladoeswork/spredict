@@ -5,6 +5,7 @@ import { dates } from "@/lib/dates.js";
 import { useRef, useState } from "react";
 import { MdAdd } from "react-icons/md";
 
+
 export default function Main() {
   const [tickersArr, setTickersArr] = useState([]);
   const [tickerInput, setTickerInput] = useState("");
@@ -37,6 +38,10 @@ export default function Main() {
   //         "You must add at least one ticker. A ticker is a 3 letter or more code for a stock. E.g TSLA for Tesla.";
   //     }
   //   });
+
+  
+  // const openai = new OpenAI(process.env.OPENAI_API_KEY);
+
 
   function renderTickers(tickers) {
     const tickersDiv = document.querySelector(".ticker-choice-display");
