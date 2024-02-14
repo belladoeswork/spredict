@@ -6,9 +6,9 @@ import { OpenAI } from "openai";
 
 
 
-export default function mainChat() {
+export default function Generate() {
 
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +31,6 @@ fetchData();
 }, []);
 
 
-  // mainChat();
 
   return (
     <div>
